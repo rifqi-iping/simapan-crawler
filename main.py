@@ -28,7 +28,7 @@ if mode == '1':
                 text = str(soup.findAll('script', type='text/javascript')[1])
                 if re.search("NIP Ditemukan!", text):
                     judul = str(soup.findAll('a', style="color: white")[0]).replace('<a style="color: white">Unduh Data Peserta Pada ', '').replace('</a>', '')
-                    console.print(f'[bold green]NIP Ditemukan pada Bangkom:[/bold Green] {judul}')
+                    console.print(f'[bold green]NIP Ditemukan pada Bangkom:[/bold Green][white] {judul}')
                     link = re.findall("e_sertifikat.*';", text)[0].replace("';", "")
                     namafile = link.replace('e_sertifikat.php?no_sertifikat=','')+'.pdf'
                     link = f'https://daftar.bpsdmd.jatengprov.go.id/events-opd/{link}'
@@ -58,7 +58,7 @@ elif mode == '2':
                 text = str(soup.findAll('script', type='text/javascript')[1])
                 if re.search("NIP Ditemukan!", text):
                     judul = str(soup.findAll('a', style="color: white")[0]).replace('<a style="color: white">Unduh Data Peserta Pada ', '').replace('</a>', '')
-                    console.print(f'[bold green]{nip} Ditemukan pada Bangkom:[/bold Green] {judul}')
+                    console.print(f'[bold green]NIP {nip} Ditemukan pada Bangkom:[/bold Green][white] {judul}')
                     link = re.findall("e_sertifikat.*';", text)[0].replace("';", "")
                     namafile = link.replace('e_sertifikat.php?no_sertifikat=','')+'.pdf'
                     link = f'https://daftar.bpsdmd.jatengprov.go.id/events-opd/{link}'
